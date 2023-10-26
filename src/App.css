@@ -18,3 +18,24 @@ footer {
 .menu-item-60146 {
   float: right;
 }
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+
+.link-item {
+  padding: 2px;
+}
+
+.push {
+  margin-left: auto;
+}
+
+header {
+  width: 100%;
+}

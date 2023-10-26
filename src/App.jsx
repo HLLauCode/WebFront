@@ -16,7 +16,7 @@ const { Header, Content, Footer } = Layout;
 
 const handleClick = () => {
 	localStorage.removeItem('token');
-	console.log('logged out!');
+	alert('logged out!');
 };
 
 function App() {
@@ -25,16 +25,16 @@ function App() {
 			<Header>
 				<nav>
 					<Space>
-						<Link to="/">List of Dogs</Link>
-						<Link to="/table">Table of Dog</Link>
-						<Link to="/create">New Dog</Link>
-						<Link to="/update">Update Dog</Link>
-						<Link to="/delete">Remove Dog</Link>
-						<Link to="/register">Register</Link>
-						<Link id="menu-item-60146" to="/login">
-							Login
-						</Link>
-						<Button onClick={handleClick}>Logout</Button>
+						<Link className='link-item' to="/">List of Dogs</Link>
+						<Link className='link-item' to="/table">Table of Dog</Link>
+						<Link className='link-item' to="/create">New Dog</Link>
+						<Link className='link-item' to="/update">Update Dog</Link>
+						<Link className='link-item' to="/delete">Remove Dog</Link>
+						<Link className='link-item' to="/register">Register</Link>
+						{localStorage.getItem('token') ? <Button className='push' onClick={handleClick}>Logout</Button> :
+						<Link className='link-item push' id="menu-item-60146" to="/login">
+						Login
+					</Link>}
 					</Space>
 				</nav>
 			</Header>
@@ -52,7 +52,7 @@ function App() {
 					<Route path="*" element={<Notfound />} />
 				</Routes>
 			</Content>
-			<Footer>Dog API</Footer>
+			<Footer>Dog's Home API</Footer>
 		</Router>
 	);
 }

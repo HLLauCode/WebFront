@@ -22,6 +22,7 @@ function onFinish(values) {
 		.post('/users', `{ "email": "${data.email}", "password": "${data.password}", "username": "${data.username}" }`)
 		.then(response => {
 			console.log(response.data);
+			alert("Registration Complete!");
 		})
 		.catch(err => {
 			console.log(err);

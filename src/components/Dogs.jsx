@@ -31,7 +31,7 @@ function Dogs() {
 						dogs.map(({ id, name, imageurl }) => (
 							<Col span={6} key={id}>
 								<Card title={id} style={{ width: 300 }}>
-                  <Image width={200} height={200} src={`${imageurl}`}/>
+                  <Image width={200} height='auto' src={`${imageurl}`}/>
 									<h1>{name}</h1>
 									<p />
 									<Link to={`/dog/${id}`}>Details</Link>
